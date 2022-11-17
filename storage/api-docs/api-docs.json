@@ -1,0 +1,1683 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "TEST OpenApi  Документація",
+        "description": "L5 Swagger OpenApi опис",
+        "contact": {
+            "email": "admin@admin.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/admin/clients": {
+            "get": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "Сторінка клієнтів",
+                "description": "Повертає json список клієнтів",
+                "operationId": "6f606ceba2fad5c8ee58c894625ffdd9",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/clients/store": {
+            "post": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "Створити нового клієнта",
+                "description": "Повертає статус",
+                "operationId": "702246a97c542aa7bc9cd9ea42efbc92",
+                "requestBody": {
+                    "description": "Data packet for Test",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "first_name": {
+                                        "type": "string",
+                                        "example": "Андрій"
+                                    },
+                                    "last_name": {
+                                        "type": "string",
+                                        "example": "Мельник"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "example": "+38(095)-000-00-00"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "example@gmail.com"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/clients/show/{id}": {
+            "get": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "Дані одного клієнта",
+                "description": "Повертає json",
+                "operationId": "fa1caf02b3ed4e888bc32e7faea388fc",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/clients/update/{id}": {
+            "put": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "Зміна даних клієнта",
+                "description": "Повертає статус",
+                "operationId": "6ff26a9e9b920066dc1736939a43858a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id акаунта",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "1"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Data packet for Test",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "first_name": {
+                                        "type": "string",
+                                        "example": "Андрій"
+                                    },
+                                    "last_name": {
+                                        "type": "string",
+                                        "example": "Мельник"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "example": "+38(095)-000-00-00"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "example@gmail.com"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/clients/destroy/{id}": {
+            "delete": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "Видалити клієнта",
+                "description": "Повертає статус",
+                "operationId": "23ba296cd8342743bf27f84d6e1a2e18",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "1"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "404": {
+                        "description": "Resource Not Found",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/currencies": {
+            "get": {
+                "tags": [
+                    "Currencies"
+                ],
+                "summary": "All currencies",
+                "description": "Return json list currencies",
+                "operationId": "d19d1d4d322c499561dbceb10ce63a3a",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/currencies/store": {
+            "post": {
+                "tags": [
+                    "Currencies"
+                ],
+                "summary": "Creates a new currency",
+                "description": "returns status",
+                "operationId": "cc3029b940d3e1f523045de95f3a39b0",
+                "requestBody": {
+                    "description": "Data packet for Test",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Доллар США"
+                                    },
+                                    "short_name": {
+                                        "type": "string",
+                                        "example": "доллар"
+                                    },
+                                    "name_iso": {
+                                        "type": "string",
+                                        "example": "USD"
+                                    },
+                                    "code_iso": {
+                                        "type": "string",
+                                        "example": "840"
+                                    },
+                                    "symbol_iso": {
+                                        "type": "string",
+                                        "example": "$"
+                                    },
+                                    "name1": {
+                                        "type": "string",
+                                        "example": "Доллар"
+                                    },
+                                    "name2": {
+                                        "type": "string",
+                                        "example": "Доллара"
+                                    },
+                                    "name3": {
+                                        "type": "string",
+                                        "example": "Долларов"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/currencies/show/{id}": {
+            "get": {
+                "tags": [
+                    "Currencies"
+                ],
+                "summary": "Single currency data",
+                "description": "Returns json",
+                "operationId": "279221e9fcfa9a9423972bf1bee24c85",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/currencies/update/{id}": {
+            "put": {
+                "tags": [
+                    "Currencies"
+                ],
+                "summary": "Зміна даних клієнта",
+                "description": "Повертає статус",
+                "operationId": "a7ccfecdca7ce1d80dd7cb1724a36274",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id акаунта",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "1"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Data packet for Test",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Доллар США"
+                                    },
+                                    "short_name": {
+                                        "type": "string",
+                                        "example": "доллар"
+                                    },
+                                    "name_iso": {
+                                        "type": "string",
+                                        "example": "USD"
+                                    },
+                                    "code_iso": {
+                                        "type": "string",
+                                        "example": "840"
+                                    },
+                                    "symbol_iso": {
+                                        "type": "string",
+                                        "example": "$"
+                                    },
+                                    "name1": {
+                                        "type": "string",
+                                        "example": "Доллар"
+                                    },
+                                    "name2": {
+                                        "type": "string",
+                                        "example": "Доллара"
+                                    },
+                                    "name3": {
+                                        "type": "string",
+                                        "example": "Долларов"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/currencies/destroy/{id}": {
+            "delete": {
+                "tags": [
+                    "Currencies"
+                ],
+                "summary": "Видалити клієнта",
+                "description": "Повертає статус",
+                "operationId": "b023320675bd9195d9d49cd137a6c936",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "1"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "404": {
+                        "description": "Resource Not Found",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/customerorders": {
+            "get": {
+                "tags": [
+                    "Customer orders"
+                ],
+                "summary": "Сторінка клієнтів",
+                "description": "Повертає json список клієнтів",
+                "operationId": "07af356236954a0a51db36f57fa4d8f2",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/customerorders/store": {
+            "post": {
+                "tags": [
+                    "Customer orders"
+                ],
+                "summary": "Створити нового клієнта",
+                "description": "Повертає статус",
+                "operationId": "7eb5860ab7bd1e4d532d8ceb35e91150",
+                "requestBody": {
+                    "description": "Data packet for Test",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "client_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "status_id": {
+                                        "type": "interger",
+                                        "example": "1"
+                                    },
+                                    "delivery_type_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "payment_type_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "sum": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": "2000.00"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/customerorders/show/{id}": {
+            "get": {
+                "tags": [
+                    "Customer orders"
+                ],
+                "summary": "Дані одного клієнта",
+                "description": "Повертає json",
+                "operationId": "a7be5539cd9150731957d86d914f6b7b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/customerorders/update/{id}": {
+            "put": {
+                "tags": [
+                    "Customer orders"
+                ],
+                "summary": "Зміна даних клієнта",
+                "description": "Повертає статус",
+                "operationId": "8a999c00c7c71506fa8a1f8bfd70ca62",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id акаунта",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "1"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Data packet for Test",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "client_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "status_id": {
+                                        "type": "interger",
+                                        "example": "1"
+                                    },
+                                    "delivery_type_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "payment_type_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "sum": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": "2000.00"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/customerorders/destroy/{id}": {
+            "delete": {
+                "tags": [
+                    "Customer orders"
+                ],
+                "summary": "Видалити клієнта",
+                "description": "Повертає статус",
+                "operationId": "e8bece2f62dfca80c091095270406dd9",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "1"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "404": {
+                        "description": "Resource Not Found",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/deliverytypes": {
+            "get": {
+                "tags": [
+                    "Delivery types"
+                ],
+                "summary": "Сторінка клієнтів",
+                "description": "Повертає json список клієнтів",
+                "operationId": "1763f5263961fd48d99eaeb5642b21cf",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/deliverytypes/store": {
+            "post": {
+                "tags": [
+                    "Delivery types"
+                ],
+                "summary": "Створити нового клієнта",
+                "description": "Повертає статус",
+                "operationId": "a612b75a8587fd63de562f4b3c3b6ded",
+                "requestBody": {
+                    "description": "Data packet for Test",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "DHL"
+                                    },
+                                    "active": {
+                                        "type": "boolean",
+                                        "example": "true"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/deliverytypes/show/{id}": {
+            "get": {
+                "tags": [
+                    "Delivery types"
+                ],
+                "summary": "Дані одного клієнта",
+                "description": "Повертає json",
+                "operationId": "da01eef66312c5c180b12f71b6d0877a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/deliverytypes/update/{id}": {
+            "put": {
+                "tags": [
+                    "Delivery types"
+                ],
+                "summary": "Зміна даних клієнта",
+                "description": "Повертає статус",
+                "operationId": "d8ad74f38b04c8d77d11eb350648f27a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id акаунта",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "1"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Data packet for Test",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "DHL"
+                                    },
+                                    "active": {
+                                        "type": "boolean",
+                                        "example": "true"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/deliverytypes/destroy/{id}": {
+            "delete": {
+                "tags": [
+                    "Delivery types"
+                ],
+                "summary": "Видалити клієнта",
+                "description": "Повертає статус",
+                "operationId": "aac11ff3493d51b75d9681094be53899",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "1"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "404": {
+                        "description": "Resource Not Found",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/goods": {
+            "get": {
+                "tags": [
+                    "Goods"
+                ],
+                "summary": "Сторінка клієнтів",
+                "description": "Повертає json список клієнтів",
+                "operationId": "094b5e9ccb5dc4a980fea10f2d6136e6",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/goods/store": {
+            "post": {
+                "tags": [
+                    "Goods"
+                ],
+                "summary": "Створити нового клієнта",
+                "description": "Повертає статус",
+                "operationId": "1078d6c0b1966e4c247d6c8819394b21",
+                "requestBody": {
+                    "description": "Data packet for Test",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "first_name": {
+                                        "type": "string",
+                                        "example": "Андрій"
+                                    },
+                                    "last_name": {
+                                        "type": "string",
+                                        "example": "Мельник"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "example": "+38(095)-022-81-26"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "vagary18"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/goods/show/{id}": {
+            "get": {
+                "tags": [
+                    "Goods"
+                ],
+                "summary": "Дані одного клієнта",
+                "description": "Повертає json",
+                "operationId": "f5ef65ad6702f9b5988652dd1b5ea432",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/goods/update/{id}": {
+            "put": {
+                "tags": [
+                    "Goods"
+                ],
+                "summary": "Зміна даних клієнта",
+                "description": "Повертає статус",
+                "operationId": "3e0c50481a2388c7f921aaf643265fe4",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id акаунта",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "1"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Data packet for Test",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "login": {
+                                        "type": "string",
+                                        "example": "_bigmir_smile_"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "example": "+38(095)-022-81-26"
+                                    },
+                                    "email_password": {
+                                        "type": "string",
+                                        "example": "vagary18"
+                                    },
+                                    "session": {
+                                        "type": "string",
+                                        "example": "49943231002%3AyrQ4nK302XxHUW%3A18"
+                                    },
+                                    "bussines_instagram_account_id": {
+                                        "type": "string",
+                                        "example": "17841444782304448"
+                                    },
+                                    "date_created": {
+                                        "type": "string",
+                                        "example": "2022-05-18"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "vagary18"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "ruslan.orelec123@gmail.com"
+                                    },
+                                    "category_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "country_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "parent_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "proxy_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "user_agent_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/goods/destroy/{id}": {
+            "delete": {
+                "tags": [
+                    "Goods"
+                ],
+                "summary": "Видалити клієнта",
+                "description": "Повертає статус",
+                "operationId": "54a50089d8f99dc451889fd408710961",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "1"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "404": {
+                        "description": "Resource Not Found",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/paymenttypes": {
+            "get": {
+                "tags": [
+                    "Payment types"
+                ],
+                "summary": "Сторінка клієнтів",
+                "description": "Повертає json список клієнтів",
+                "operationId": "a6b795023aae79acf7d5eb59a8869978",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/paymenttypes/store": {
+            "post": {
+                "tags": [
+                    "Payment types"
+                ],
+                "summary": "Створити нового клієнта",
+                "description": "Повертає статус",
+                "operationId": "ec59086e276be0f333b9eba2e24dc21d",
+                "requestBody": {
+                    "description": "Data packet for Test",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Visa"
+                                    },
+                                    "active": {
+                                        "type": "boolean",
+                                        "example": "true"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/paymenttypes/show/{id}": {
+            "get": {
+                "tags": [
+                    "Payment types"
+                ],
+                "summary": "Дані одного клієнта",
+                "description": "Повертає json",
+                "operationId": "cfb4880891f78f78df0a0cc2eb8b3a8b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/paymenttypes/update/{id}": {
+            "put": {
+                "tags": [
+                    "Payment types"
+                ],
+                "summary": "Зміна даних клієнта",
+                "description": "Повертає статус",
+                "operationId": "9ebae4e85a3fce6002040a7342bf4121",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id акаунта",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "1"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Data packet for Test",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Master Card"
+                                    },
+                                    "active": {
+                                        "type": "boolean",
+                                        "example": "true"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/paymenttypes/destroy/{id}": {
+            "delete": {
+                "tags": [
+                    "Payment types"
+                ],
+                "summary": "Видалити клієнта",
+                "description": "Повертає статус",
+                "operationId": "27174693d90510238dbe5edcdb95ec76",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "1"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "404": {
+                        "description": "Resource Not Found",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    }
+}
